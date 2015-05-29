@@ -1,23 +1,30 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
+/* MSDN Channel9 */
+@-moz-document domain(msdn.com) {
+  .firstContent { margin: 0; padding: 0; overflow: hidden; }
+
+  .branding { display: none !important; }
+
+  /* html5 video positioning & size */
+  .playerGoesHere { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+  video { width: 100% !important; height: 100% !important; }
+
+  /* controls */
+  /*.ch9p .controls { display: flex !important; } debug controls */
+  .ch9p .seek.control { background: linear-gradient(90deg, rebeccapurple, rebeccapurple); }
+  .ch9p .seek.control .handle { border-color: #fff; background: linear-gradient(45deg, white, whitesmoke); }
+}
+
+/* YouTube */
 @-moz-document url-prefix("https://www.youtube.com/watch?v=") {
   body { overflow: hidden; }
 }
-
 @-moz-document domain(youtube.com) {
-  body {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-  }
+  body { margin: 0; padding: 0; }
 
-  #page.watch-wide #movie_player {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+  /* html5 video positioning & size */
+  #page.watch-wide #movie_player { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
   #page.watch-wide #movie_player video,
   #page.watch-wide #movie_player #player-api,
@@ -28,32 +35,12 @@
     height: 100% !important;
   }
 
-  .ytp-unloaded-progress {
-    background: linear-gradient(90deg, rebeccapurple, rebeccapurple);
-  }
-
-  .ytp-play-progress {
-    background: linear-gradient(128deg, black, greenyellow);
-    background-size: 100% 100%;
-    box-shadow: 0 0 12px #000;
-  }
-
-  .ytp-load-progress {
-    background: linear-gradient(90deg, magenta, darkmagenta);
-  }
-
-  .html5-scrubber-button {
-    border: 5px solid #fff;
-    background: #f0f;
-  }
-
-  .ytp-volume-slider-foreground::before {
-    background: linear-gradient(90deg, black, red)
-  }
-
-  .ytp-time-display::after {
-    color: white;
-    content: "HTML5";
-    margin-left: 15px;
+  /* controls */
+  .ytp-unloaded-progress { background: linear-gradient(90deg, rebeccapurple, rebeccapurple); }
+  .ytp-play-progress { background: linear-gradient(128deg, black, greenyellow); background-size: 100% 100%; box-shadow: 0 0 12px #000; }
+  .ytp-load-progress { background: linear-gradient(90deg, magenta, darkmagenta); }
+  .html5-scrubber-button { border: 5px solid #fff; background: #f0f; }
+  .ytp-volume-slider-foreground::before { background: linear-gradient(90deg, black, red) }
+  .ytp-time-display::after { color: white; content: "HTML5"; margin-left: 15px;
   }
 }
