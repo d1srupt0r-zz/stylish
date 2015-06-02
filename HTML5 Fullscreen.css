@@ -12,15 +12,15 @@ body { margin: 0; padding: 0; }
   video { width: 100% !important; height: 100% !important; }
 
   /* controls */
-  .ch9p .controls { display: flex !important; } /* debug controls */
+  /*.ch9p .controls { display: flex !important; } /* debug controls */
   .ch9p .seek.control { background: linear-gradient(90deg, rebeccapurple, rebeccapurple); }
   .ch9p .seek.control .handle { border-color: greenyellow !important; background: linear-gradient(45deg, white, whitesmoke); }
-  /*.ch9p .skipBack::after { color: white; content: "HTML5"; margin-left: 15px; } /* show html5 display */
+  .ch9p .skipBack::after { color: white; content: "HTML5"; margin-left: 15px; }
 }
 
 /* YouTube */
 @-moz-document url-prefix("https://www.youtube.com/watch?v=") {
-  body { overflow: hidden; }
+  body { /*overflow: hidden; /* todo only apply this when in theater mode */ }
 }
 @-moz-document domain(youtube.com) {
   /* positioning & size */
